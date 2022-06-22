@@ -1,0 +1,17 @@
+*.csv
+*.tmp
+*.out
+*.coverage.*
+.DS_Store
+.ipynb_checkpoints/
+catboost_info/
+__pycache__/
+nostradamus.egg-info/
+.vscode
+data
+*.xml
+.env
+.idea
+/credentials.json
+public
+.coverage
