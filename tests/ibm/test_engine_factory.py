@@ -12,17 +12,16 @@ def env_setup(monkeypatch):
     monkeypatch.setenv("IBM_PORT", "port")
 
 
-
 def test_engine_factory(mocker):
     pdw = mocker.patch("db_connectors.ibm.ibm_connection")
     engine = ibm_engine()
 
     pdw.assert_called_once_with(
-        host = 'host',
-        port = 'port',
-        database = 'database',
-        user = 'user',
-        password = 'password',
+        host="host",
+        port="port",
+        database="database",
+        user="user",
+        password="password",
     )
 
     assert engine == pdw.return_value

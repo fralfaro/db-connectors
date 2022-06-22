@@ -22,8 +22,8 @@ from db_connectors import __version__  # noqa
 
 # -- Project information -----------------------------------------------------
 
-project = u"db_connectors"
-copyright = u"2022, Francisco Alfaro"
+project = "db_connectors"
+copyright = "2022, Francisco Alfaro"
 
 # The full version, including alpha/beta/rc tags
 release = __version__
@@ -63,5 +63,5 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "sphinx_rtd_theme"
 
 # pydantic
-#autodoc_pydantic_model_show_json = True
-#autodoc_pydantic_settings_show_json = False
+# autodoc_pydantic_model_show_json = True
+# autodoc_pydantic_settings_show_json = False

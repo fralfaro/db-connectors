@@ -13,18 +13,17 @@ def env_setup(monkeypatch):
     monkeypatch.setenv("DRIVER_SQL", "driver")
 
 
-
 def test_engine_factory(mocker):
     pdw = mocker.patch("db_connectors.pdw.pdw_connection")
     engine = pdw_engine()
 
     pdw.assert_called_once_with(
-        host = 'host',
-        port = 'port',
-        database = 'database',
-        user = 'user',
-        password = 'password',
-        driver = 'driver'
+        host="host",
+        port="port",
+        database="database",
+        user="user",
+        password="password",
+        driver="driver",
     )
 
     assert engine == pdw.return_value

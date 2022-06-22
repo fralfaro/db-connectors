@@ -1,6 +1,6 @@
 # Common Connectors
 
-[![YourActionName Actions Status](https://github.com/fralfaro/db-connectors/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/fralfaro/db-connectors/actions)
+[![YourActionName Actions Status](https://github.com/fralfaro/db-connectors/actions/workflows/github-actions.yml/badge.svg)](https://github.com/fralfaro/db-connectors/actions)
 <a href="https://fralfaro.github.io/db-connectors/"><img alt="Link a la Documentación" src="https://img.shields.io/badge/docs-link-brightgreen"></a>
 [![codecov](https://codecov.io/gh/fralfaro/db-connectors/branch/master/graph/badge.svg)](https://codecov.io/gh/fralfaro/db-connectors)
 

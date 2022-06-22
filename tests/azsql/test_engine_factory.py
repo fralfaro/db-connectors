@@ -13,18 +13,17 @@ def env_setup(monkeypatch):
     monkeypatch.setenv("DRIVER_SQL", "driver")
 
 
-
 def test_engine_factory(mocker):
     azsql = mocker.patch("db_connectors.azsql.azsql_connection")
     engine = azsql_engine()
 
     azsql.assert_called_once_with(
-        host = 'host',
-        database = 'database',
-        user = 'user',
-        password = 'password',
-        authentication = 'authentication',
-        driver = 'driver'
+        host="host",
+        database="database",
+        user="user",
+        password="password",
+        authentication="authentication",
+        driver="driver",
     )
 
     assert engine == azsql.return_value

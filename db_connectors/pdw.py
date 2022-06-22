@@ -9,12 +9,7 @@ from pyodbc import Connection, connect
 
 
 def pdw_connection(
-        host: str,
-        port: str,
-        database: str,
-        user: str,
-        password: str,
-        driver:str
+    host: str, port: str, database: str, user: str, password: str, driver: str
 ) -> Connection:
     """
     PDW connection
@@ -27,12 +22,13 @@ def pdw_connection(
     :return: pwd connection
     """
 
-    #driver = '{ODBC Driver 17 for SQL Server}'
-    conn_string = f'DRIVER={driver};SERVER={host},{port};DATABASE={database};UID={user};PWD={password}'
+    # driver = '{ODBC Driver 17 for SQL Server}'
+    conn_string = f"DRIVER={driver};SERVER={host},{port};DATABASE={database};UID={user};PWD={password}"
 
     conn = connect(conn_string)
 
     return conn
+
 
 def pdw_engine():
     """
@@ -42,12 +38,12 @@ def pdw_engine():
     """
 
     engine = pdw_connection(
-        host = os.environ["PDW_HOST"],
-        port = os.environ["PDW_PORT"],
-        database = os.environ["PDW_DATABASE"],
-        user = os.environ["PDW_USERNAME"],
-        password = os.environ["PDW_PASSWORD"],
-        driver = os.environ["DRIVER_SQL"]
+        host=os.environ["PDW_HOST"],
+        port=os.environ["PDW_PORT"],
+        database=os.environ["PDW_DATABASE"],
+        user=os.environ["PDW_USERNAME"],
+        password=os.environ["PDW_PASSWORD"],
+        driver=os.environ["DRIVER_SQL"],
     )
 
     return engine

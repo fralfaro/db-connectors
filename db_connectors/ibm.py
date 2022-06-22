@@ -8,13 +8,10 @@ import os
 import ibm_db_dbi as db
 from ibm_db_dbi import Connection
 
+
 def ibm_connection(
-        host: str,
-        port: str,
-        database: str,
-        user: str,
-        password: str
-)->Connection:
+    host: str, port: str, database: str, user: str, password: str
+) -> Connection:
     """
     IBM connection
 
@@ -26,12 +23,11 @@ def ibm_connection(
     :return: pwd connection
     """
 
-    conn = db.connect(
-        f"DATABASE={database};HOSTNAME={host};PORT={port};PROTOCOL=TCPIP;UID={user};PWD={password};",
-        "","","")
-
+    string = f"DATABASE={database};HOSTNAME={host};PORT={port};PROTOCOL=TCPIP;UID={user};PWD={password};"
+    conn = db.connect(string, "", "")
 
     return conn
+
 
 def ibm_engine():
     """
@@ -41,11 +37,11 @@ def ibm_engine():
     """
 
     engine = ibm_connection(
-        host = os.environ["IBM_HOST"],
-        port = os.environ["IBM_PORT"],
-        database = os.environ["IBM_DATABASE"],
-        user = os.environ["IBM_USERNAME"],
-        password = os.environ["IBM_PASSWORD"],
+        host=os.environ["IBM_HOST"],
+        port=os.environ["IBM_PORT"],
+        database=os.environ["IBM_DATABASE"],
+        user=os.environ["IBM_USERNAME"],
+        password=os.environ["IBM_PASSWORD"],
     )
 
     return engine

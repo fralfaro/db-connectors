@@ -10,7 +10,7 @@ import os
 
 
 def bq_connection(
-        project_id: str,
+    project_id: str,
 ) -> Client:
     """
     BigQuery connection
@@ -19,12 +19,12 @@ def bq_connection(
     :return: BigQuery connection
     """
 
-    conn  = bigquery.Client(
+    conn = bigquery.Client(
         project=project_id,
     )
 
-
     return conn
+
 
 def bq_engine():
     """
@@ -33,11 +33,6 @@ def bq_engine():
     :return: engines
     """
 
-    engine = bq_connection(
-        project= os.environ["ID_PROJECT"]
-    )
+    engine = bq_connection(project=os.environ["ID_PROJECT"])
 
     return engine
-
-
-
